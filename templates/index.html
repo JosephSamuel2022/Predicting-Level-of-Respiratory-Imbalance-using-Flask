@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Predicting Level of Respiratory Imbalance</title>
+</head>
+
+<body>
+    <div class="login">
+    
+    
+
+    
+    <form action="{{ url_for('predict')}}"method="post">
+    <input type="text" name="Dehydration" placeholder="Dehydration" required="required" /><br>
+    <input type="text" name="Medicine Overdose" placeholder="Medicine Overdose" required="required" /><br>
+    <input type="text" name="Acidious" placeholder="Acidious" required="required" /><br>
+    <input type="text" name="Cold" placeholder="Cold" required="required" /><br>
+    <input type="text" name="Cough" placeholder="Cough" required="required" /><br>
+    <input type="text" name="Type" placeholder="Type" required="required" /><br>
+    <input type="text" name="Temperature" placeholder="Temperature" required="required" /><br>
+    <input type="text" name="Heart Rate" placeholder="Heart Rate" required="required" /><br>
+    <input type="text" name="Pulse" placeholder="Pulse" required="required" /><br>
+    <input type="text" name="BPSYS" placeholder="BPSYS" required="required" /><br>
+    <input type="text" name="BPDIA" placeholder="BPDIA" required="required" /><br>
+    <input type="text" name="Respiratory Rate" placeholder="Respiratory Rate" required="required" /><br>
+    <input type="text" name="Oxygen Saturation" placeholder="Oxygen Saturation" required="required" /><br>
+    <input type="text" name="PH" placeholder="PH" required="required" /><br>
+    
+    <button type="submit" class="btn">Predict</button>
+    </form>
+    <br>
+    <br>
+    {{ prediction_text }}
+    
+    </div>
+</body>
+
+</html>  
