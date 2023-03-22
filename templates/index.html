@@ -1,38 +1,90 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Predicting Level of Respiratory Imbalance</title>
+    <link rel="stylesheet" href="/static/styles2.css">
+    <title>Predicting Level of Respiratory Imbalance</title>
+    <script src="/static/validate1.js"></script>
 </head>
-
 <body>
-    <div class="login">
-    
-    
-
-    
-    <form action="{{ url_for('predict')}}"method="post">
-    <input type="text" name="Dehydration" placeholder="Dehydration" required="required" /><br>
-    <input type="text" name="Medicine Overdose" placeholder="Medicine Overdose" required="required" /><br>
-    <input type="text" name="Acidious" placeholder="Acidious" required="required" /><br>
-    <input type="text" name="Cold" placeholder="Cold" required="required" /><br>
-    <input type="text" name="Cough" placeholder="Cough" required="required" /><br>
-    <input type="text" name="Type" placeholder="Type" required="required" /><br>
-    <input type="text" name="Temperature" placeholder="Temperature" required="required" /><br>
-    <input type="text" name="Heart Rate" placeholder="Heart Rate" required="required" /><br>
-    <input type="text" name="Pulse" placeholder="Pulse" required="required" /><br>
-    <input type="text" name="BPSYS" placeholder="BPSYS" required="required" /><br>
-    <input type="text" name="BPDIA" placeholder="BPDIA" required="required" /><br>
-    <input type="text" name="Respiratory Rate" placeholder="Respiratory Rate" required="required" /><br>
-    <input type="text" name="Oxygen Saturation" placeholder="Oxygen Saturation" required="required" /><br>
-    <input type="text" name="PH" placeholder="PH" required="required" /><br>
-    
-    <button type="submit" class="btn">Predict</button>
-    </form>
-    <br>
-    <br>
-    {{ prediction_text }}
-    
+    <div class="form">
+        <div class="form-panel one">
+          <div class="form-header">
+            <h1>Predict Level of Respiratory Imbalance</h1>
+          </div><br>
+          <div class="form-header">
+            <h2>Enter the following values to predict the level of Respiratory Imbalance</h2>
+          </div>
+          <div class="form-content">
+            <form name="form1" onsubmit="return validateForm()" action="{{ url_for('predict')}}" method="post">
+              <div class="form-group">
+                <label>Enter Dehydration Value</label>
+                <input type="text" name="Dehydration" placeholder="Dehydration" required="required" />
+              </div>
+              <div class="form-group">
+                <label>Enter Medicine Overdose Value</label>
+                <input type="text" name="Medicine_Overdose" placeholder="Medicine Overdose" required="required" />
+              </div>
+              <div class="form-group">
+                <label>Enter Acidious Value</label>
+                <input type="text" name="Acidious" placeholder="Acidious" required="required" />
+              </div>
+              <div class="form-group">
+                <label>Enter Cold Value</label>
+                <input type="text" name="Cold" placeholder="Cold" required="required" />
+              </div>
+              <div class="form-group">
+                <label>Enter Cough Value</label>
+                <input type="text" name="Cough" placeholder="Cough" required="required" />
+              </div>
+              <div class="form-group">
+                <label>Enter Type Value</label>
+                <input type="text" name="Type" placeholder="Type" required="required" />
+              </div>
+              <div class="form-group">
+                <label>Enter Temperature Value</label>
+                <input type="text" name="Temperature" placeholder="Temperature" required="required" />
+              </div>
+              <div class="form-group">
+                <label>Enter Heart Rate Value</label>
+                <input type="text" name="Heart_Rate" placeholder="Heart Rate" required="required" />
+              </div>
+              <div class="form-group">
+                <label>Enter Pulse Value</label>
+                <input type="text" name="Pulse" placeholder="Pulse" required="required" />
+              </div>
+              <div class="form-group">
+                <label>Enter BPSYS Value</label>
+                <input type="text" name="BPSYS" placeholder="BPSYS" required="required" />
+              </div>
+              <div class="form-group">
+                <label>Enter BPDIA Value</label>
+                <input type="text" name="BPDIA" placeholder="BPDIA" required="required" />
+              </div>
+              <div class="form-group">
+                <label>Enter Respiratory Rate Value</label>
+                <input type="text" name="Respiratory_Rate" placeholder="Respiratory Rate" required="required" />
+              </div>
+              <div class="form-group">
+                <label>Enter Oxygen Saturation Value</label>
+                <input type="text" name="Oxygen_Saturation" placeholder="Oxygen Saturation" required="required" />
+              </div>
+              <div class="form-group">
+                <label>Enter PH Value</label>
+                <input type="text" name="PH" placeholder="PH" required="required" />
+              </div>
+              <br><br>
+              {{ prediction_text }}
+              <br><br>
+              <div class="form-group">
+                <button type="submit">Predict</button>
+              </div>
+              <div class="form-group">
+                <button type="reset">Clear</button>
+              </div>
+            </form>
+			 
+          </div>
+        </div>
     </div>
 </body>
-
-</html>  
+</html>
