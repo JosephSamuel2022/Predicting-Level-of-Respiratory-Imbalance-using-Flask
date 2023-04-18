@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login Page</title>
+    <style>
+    body,html{
+        height: 100%;
+        margin:0;
+    }
+    html{
+        background-color:  #bccbde;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        font-family:Arial, Helvetica, sans-serif;
+        font-weight: bold;
+    }
+    .header{
+        width:auto;
+        height: auto;
+        margin-bottom: 30px;
+        padding:18px;
+        background: #5b5da6f3;
+    }
+    .header h1{
+        color: rgb(251, 255, 20);
+    }
+    .container{
+        position: relative;
+        margin:30px auto;
+        width: 500px;
+        height:auto;
+        padding-bottom: 10px;
+        border-radius: 5px;
+        background: rgba(253, 251, 251, 0.938);
+    }
+    .container form{
+        margin:50px;
+        font-size: 18px;
+    }
+    .container h1{
+        background: rgba(21, 233, 180, 0.548);
+        color: rgb(226, 48, 17);
+        margin:0px auto;
+        padding:30px;
+        text-align: center;
+    }
+    .container input{
+        width:100%;
+        margin-top: 10px;
+        padding:10px;
+        background-color:rgba(170, 211, 238, 0.89);
+        border:2px solid #f0eded;
+        border-radius: 5px;
+    }
+    .container button{
+        background: #16e09d;
+        color: white;
+        font-size: 17px;
+        font-weight: bold;
+        width: 160px;
+        margin-top: 10px;
+        padding: 15px;
+        border:1px;
+        border-radius: 50px;
+        cursor:pointer;
+    }
+    .container p{
+        font-size:18px;
+    }
+    </style>
+<script>
+    function validateform(){
+        var a,b;
+        a=document.getElementById("pid").value;
+        b=document.getElementById("password").value;
+        if(a=="")
+        {alert("Patient ID must be filled!");return false;}
+        if(b=="")
+        {alert("Password must be filled!");return false;}
+    }    
+</script>
+</head>
+
+<body> 
+    <div class="header">
+        <center><h1>Predict Level of Respiratory Imbalance</h1></center>
+    </div>
+    <div class="container">
+        <h1>Login</h1>
+        <form id="login" action="/login" method="POST">
+        <label for="username">Patient ID: </label><br>
+        <input name="pid" id="pid" type="text" placeholder="Patient ID"><br><br>
+        <label for="password">Password: </label><br>
+        <input name="password" id="password" type="password" placeholder="Your password"><br><br>
+        <center>  
+        <button form="login" type="submit" name="login">LOGIN</button>
+        </center>
+        </form>
+        <p align="center">Don't have an account? <a href="{{ url_for('signup') }}">Sign up</a></p>
+    </div>
+</body>
+</html>
